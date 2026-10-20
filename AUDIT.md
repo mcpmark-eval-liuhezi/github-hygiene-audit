@@ -64,4 +64,8 @@ All four repositories qualify as dormant (no open pull requests, no workflows, n
 ## 5. Publication notes
 
 - Repository creation under the personal account (HeziLiu) was rejected with the same `403 Resource not accessible by personal access token` error, so this audit was published to the organization instead: **mcpmark-eval-liuhezi/github-hygiene-audit**, with AUDIT.md pushed to `main`.
-- The notification "ignore" request for this audit repository was also attempted as part of the run.
+- The notification "ignore" request for this audit repository was also rejected with `403 Resource not accessible by personal access token`, so the audit repository itself is not muted either.
+
+## 6. Tooling limitation summary
+
+All notification-mutating and org-repository-creation operations on the personal account require token scopes that the current personal access token does not grant. Everything read-only (repos, PRs, workflows, discussions, issues, advisories attempt) succeeded, and file writes to the organization succeeded.
